@@ -67,7 +67,8 @@ mongoose.connect("mongodb://47.112.180.188:27017").then(() => {
 
 ## 500 万分组
 
-CPU 飙升到 50%
+- 并发数 1 CPU 飙升到 50%
+- 并发数 2 CPU 飙升到 100%
 
 ```ts
 import mongoose, { Schema, model } from "mongoose";
