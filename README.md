@@ -1,30 +1,11 @@
 # demo-db-benchmark
+数据库性能测试：
+- 插入 500 万条数据
+- 分组查询
 
-数据库性能测试
+## 10万分组
 
-## 插入
-插入 10 万条数据
-
-```
-nohup node /www/im/chat.js >> /usr/local/node/output.log 2>&1 &
-```
-
-```js
-const data = {
-  name: 'test',
-  age: (new Date).getSeconds(),
-  category: `${i} / 10`,
-  rank: i
-}
-```
-
-| name | time |
-| -    |  -   |
-| mongo | { start: 1652180243367, end: 1652181532010 } 1288.5s |
-
-## 查询
-
-针对 10 条数据
+针对 10w 条数据
 - 根据 category 分组
 - 对 age 进行 sum 聚合
 - 根据 rank 排序
@@ -84,7 +65,7 @@ mongoose.connect("mongodb://47.112.180.188:27017").then(() => {
 });
 ```
 
-### 500 万分组
+## 500 万分组
 
 CPU 飙升到 50%
 
